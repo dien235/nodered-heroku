@@ -1,0 +1,235 @@
+[
+    {
+        "id": "74415296520a8af5",
+        "type": "tab",
+        "label": "LED Button Control",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "62b4410ea1f9156d",
+        "type": "ui_button",
+        "z": "74415296520a8af5",
+        "name": "Button ON",
+        "group": "dashboard_group",
+        "order": 1,
+        "width": 3,
+        "height": 1,
+        "passthru": false,
+        "label": "Bật đèn",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "#00b300",
+        "icon": "fa-lightbulb-o",
+        "payload": "1",
+        "payloadType": "str",
+        "topic": "",
+        "x": 150,
+        "y": 80,
+        "wires": [
+            [
+                "3ac916145facab27"
+            ]
+        ]
+    },
+    {
+        "id": "4b1de7cf6027a2dc",
+        "type": "ui_button",
+        "z": "74415296520a8af5",
+        "name": "Button OFF",
+        "group": "dashboard_group",
+        "order": 2,
+        "width": 3,
+        "height": 1,
+        "passthru": false,
+        "label": "Tắt đèn",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "#cc0000",
+        "icon": "fa-power-off",
+        "payload": "0",
+        "payloadType": "str",
+        "topic": "",
+        "x": 150,
+        "y": 140,
+        "wires": [
+            [
+                "3ac916145facab27"
+            ]
+        ]
+    },
+    {
+        "id": "3ac916145facab27",
+        "type": "ui_led",
+        "z": "74415296520a8af5",
+        "order": 3,
+        "group": "dashboard_group",
+        "label": "LED",
+        "colorForValue": [
+            {
+                "value": "1",
+                "color": "#00ff00",
+                "valueType": "str"
+            }
+        ],
+        "shape": "circle",
+        "name": "LED Output",
+        "x": 360,
+        "y": 110,
+        "wires": []
+    },
+    {
+        "id": "1e51bb6624741eef",
+        "type": "mqtt in",
+        "z": "74415296520a8af5",
+        "name": "",
+        "topic": "test/timestamp",
+        "qos": "0",
+        "datatype": "auto-detect",
+        "broker": "55822c7a844d2fad",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 320,
+        "y": 320,
+        "wires": [
+            [
+                "6ccd0bd9b316d3bc"
+            ]
+        ]
+    },
+    {
+        "id": "bc60c5becef1646d",
+        "type": "mqtt out",
+        "z": "74415296520a8af5",
+        "name": "",
+        "topic": "test/timestamp",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "55822c7a844d2fad",
+        "x": 540,
+        "y": 420,
+        "wires": []
+    },
+    {
+        "id": "6ccd0bd9b316d3bc",
+        "type": "debug",
+        "z": "74415296520a8af5",
+        "name": "debug 2",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 560,
+        "y": 320,
+        "wires": []
+    },
+    {
+        "id": "6d5ffbc689023836",
+        "type": "inject",
+        "z": "74415296520a8af5",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 300,
+        "y": 420,
+        "wires": [
+            [
+                "bc60c5becef1646d"
+            ]
+        ]
+    },
+    {
+        "id": "6194f86f7953efaf",
+        "type": "aedes broker",
+        "z": "74415296520a8af5",
+        "name": "",
+        "mqtt_port": 1883,
+        "mqtt_ws_bind": "port",
+        "mqtt_ws_port": "",
+        "mqtt_ws_path": "",
+        "cert": "",
+        "key": "",
+        "certname": "",
+        "keyname": "",
+        "persistence_bind": "mongodb",
+        "dburl": "",
+        "usetls": false,
+        "x": 590,
+        "y": 180,
+        "wires": [
+            [],
+            []
+        ]
+    },
+    {
+        "id": "dashboard_group",
+        "type": "ui_group",
+        "name": "Nhóm 1",
+        "tab": "dashboard_tab",
+        "order": 1,
+        "disp": true,
+        "width": 6
+    },
+    {
+        "id": "55822c7a844d2fad",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "localhost",
+        "port": 1883,
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": 4,
+        "keepalive": 60,
+        "cleansession": true,
+        "autoUnsubscribe": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthRetain": "false",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closeRetain": "false",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willRetain": "false",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "dashboard_tab",
+        "type": "ui_tab",
+        "name": "Điều khiển",
+        "icon": "dashboard",
+        "order": 1
+    }
+]
