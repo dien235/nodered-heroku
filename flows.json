@@ -186,6 +186,57 @@
         ]
     },
     {
+        "id": "5fa82d04e6610921",
+        "type": "http request",
+        "z": "74415296520a8af5",
+        "name": "",
+        "method": "GET",
+        "ret": "txt",
+        "paytoqs": "ignore",
+        "url": "https://testiot1-5c5432772aae.herokuapp.com",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 510,
+        "y": 540,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "521d55837663f685",
+        "type": "inject",
+        "z": "74415296520a8af5",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "10",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 310,
+        "y": 540,
+        "wires": [
+            [
+                "5fa82d04e6610921"
+            ]
+        ]
+    },
+    {
         "id": "dashboard_group",
         "type": "ui_group",
         "name": "Nhóm 1",
