@@ -1,0 +1,97 @@
+[
+    {
+        "id": "74415296520a8af5",
+        "type": "tab",
+        "label": "LED Button Control",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "62b4410ea1f9156d",
+        "type": "ui_button",
+        "z": "74415296520a8af5",
+        "name": "Button ON",
+        "group": "dashboard_group",
+        "order": 1,
+        "width": 3,
+        "height": 1,
+        "passthru": false,
+        "label": "Bật đèn",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "#00b300",
+        "icon": "fa-lightbulb-o",
+        "payload": "1",
+        "payloadType": "str",
+        "topic": "",
+        "x": 150,
+        "y": 80,
+        "wires": [
+            [
+                "3ac916145facab27"
+            ]
+        ]
+    },
+    {
+        "id": "4b1de7cf6027a2dc",
+        "type": "ui_button",
+        "z": "74415296520a8af5",
+        "name": "Button OFF",
+        "group": "dashboard_group",
+        "order": 2,
+        "width": 3,
+        "height": 1,
+        "passthru": false,
+        "label": "Tắt đèn",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "#cc0000",
+        "icon": "fa-power-off",
+        "payload": "0",
+        "payloadType": "str",
+        "topic": "",
+        "x": 150,
+        "y": 140,
+        "wires": [
+            [
+                "3ac916145facab27"
+            ]
+        ]
+    },
+    {
+        "id": "3ac916145facab27",
+        "type": "ui_led",
+        "z": "74415296520a8af5",
+        "order": 3,
+        "group": "dashboard_group",
+        "label": "LED",
+        "colorForValue": [
+            {
+                "value": "1",
+                "color": "#00ff00",
+                "valueType": "str"
+            }
+        ],
+        "shape": "circle",
+        "name": "LED Output",
+        "x": 360,
+        "y": 110,
+        "wires": []
+    },
+    {
+        "id": "dashboard_group",
+        "type": "ui_group",
+        "name": "Nhóm 1",
+        "tab": "dashboard_tab",
+        "order": 1,
+        "disp": true,
+        "width": 6
+    },
+    {
+        "id": "dashboard_tab",
+        "type": "ui_tab",
+        "name": "Điều khiển",
+        "icon": "dashboard",
+        "order": 1
+    }
+]
